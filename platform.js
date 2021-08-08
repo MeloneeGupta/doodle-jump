@@ -9,11 +9,8 @@ function Platform(x, altitude, size, color) {
     this.onScreen = true;
   }
   
-  /**
-   * draws platform at altitude
-   */
   Platform.prototype.draw = function(altitude) {
-  
+
     stroke(255);
     strokeWeight(3);
     fill(this.color);
@@ -26,13 +23,10 @@ function Platform(x, altitude, size, color) {
     } else {
       this.onScreen = false;
     }
-  };
-  
-  /**
-   * returns whether passed Doodler hits the platform
-   */
+  }
+
   Platform.prototype.collidesWith = function(doodler) {
-  
+
     var platformTop = this.altitude;
     var doodlerBottom = doodler.location.y - doodler.size / 2 ;
   
@@ -54,4 +48,4 @@ function Platform(x, altitude, size, color) {
     }
   
     return false;
-  };
+  }
